@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cognex.DataMan.SDK.Utils.PC</name>
+    </assembly>
+    <members>
+        <member name="T:Cognex.DataMan.SDK.Utils.DmccEscaper">
+            <summary>
+            Performs escaping/unescaping of string arguments for DMCC commands.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.DmccEscaper.Escape(System.String,System.Boolean)">
+            <summary>
+            Escapes a bare string to a string that is compatible with the DMCC protocol.
+            </summary>
+            <param name="text">The string to be escaped.</param>
+            <param name="surroundWithQuotes">Quote flag to control if the escaped string to be returned within quotes</param>
+            <returns>The escaped string, optionally in quotation marks.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.DmccEscaper.Unescape(System.String)">
+            <summary>
+            Unescapes a DMCC-escaped string.
+            </summary>
+            <param name="text">The string to be unescaped. Note: no quotes are allowed around the string.</param>
+            <returns>The unescaped string.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.InvalidResultTypeException">
+            <summary>
+            Thrown if the connected remote system rejects the specified result type combination.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.InvalidResultTypeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the InvalidResultTypeException class.
+            <param name="reason">The reason of the exception</param>
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.InvalidResultTypeException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.InvalidResultTypeException.Reason">
+            <summary>
+            Gets the reason of the exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.Gui">
+            <summary>
+            Contains utility functions related to image display and manipulation.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.Gui.MaximumImageZoomFactor">
+            <summary>
+            The maximum zoom factor that can be applied to images.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.GetZoomFactorForImageInControl(System.Drawing.Size,System.Drawing.Size)">
+            <summary>
+            Calculates the zoom factor for placing the image into a control, while keeping the aspect ratio of the image.
+            </summary>
+            <param name="imageSize">The size of the image.</param>
+            <param name="controlSize">The size of the control.</param>
+            <returns>The zoom factor to be applied to the specified image, in order to fit it into the specified control.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.FitImageInControl(System.Drawing.Size,System.Drawing.Size,System.Double@)">
+            <summary>
+            Fits an image into a control, while keeping the aspect ratio of the image.
+            </summary>
+            <param name="imageSize">The size of the image.</param>
+            <param name="controlSize">The size of the control.</param>
+            <param name="zoomFactor">On return it contains the calculated zoom factor.</param>
+            <returns>The calculated size of the zoomed image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.FitImageInControl(System.Drawing.Size,System.Drawing.Size)">
+            <summary>
+            Fits an image into a control, while keeping the aspect ratio of the image.
+            </summary>
+            <param name="imageSize">The size of the image.</param>
+            <param name="controlSize">The size of the control.</param>
+            <returns>The calculated size of the zoomed image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.FitImageInControl(System.Drawing.Size,System.Drawing.Rectangle,System.Double@)">
+            <summary>
+            Calculates the boundary rectangle of an image that is placed into a control, while keeping its aspect ratio. 
+            </summary>
+            <param name="imageSize">The size of the image.</param>
+            <param name="controlSize">The size of the control.</param>
+            <param name="zoomFactor">On return it contains the calculated zoom factor.</param>
+            <returns>The boundary rectangle for the image, zoomed and centered as necessary.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.FitImageInControl(System.Drawing.Size,System.Drawing.Rectangle)">
+            <summary>
+            Calculates the boundary rectangle of an image that is placed into a control, while keeping its aspect ratio. 
+            </summary>
+            <param name="imageSize">The size of the image.</param>
+            <param name="controlSize">The size of the control.</param>
+            <returns>The boundary rectangle for the image, zoomed and centered as necessary.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.ResizeImageToBitmap(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+            Resizes the specified image to the specified size.
+            </summary>
+            <param name="image">The image to be resized.</param>
+            <param name="desiredSize">The desired size of the image.</param>
+            <returns>The resized image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.BitmapToBytes(System.Drawing.Bitmap,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Returns the byte representation of the specified image in the specified format.
+            </summary>
+            <param name="image">The image whose byte data is requested.</param>
+            <param name="format">The format of the image for which the byte data is requested.</param>
+            <returns>The byte array that represents the specified image in the specified format.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.BytesToBitmap(System.Byte[])">
+            <summary>
+            Creates a bitmap image from the specified image byte data.
+            </summary>
+            <param name="imageData">The array that contains the image data.</param>
+            <returns>The image created from the specified image data.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.BytesToBitmap(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Creates a bitmap image from a section of the specified image byte data.
+            </summary>
+            <param name="buffer">The array that contains the image data.</param>
+            <param name="offset">The offset of the beginning of the image data within the specified array.</param>
+            <param name="count">The number of image data bytes within the specified array.</param>
+            <returns>The image created from the specified image byte data.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.Gui.StreamToBitmap(System.IO.Stream,System.Int32)">
+            <summary>
+            Creates a bitmap image from the specified image byte data stream.
+            </summary>
+            <param name="imageStream">The stream that provides the image byte data.</param>
+            <param name="imageDataSize">The number of bytes to read from the specified stream.</param>
+            <returns>The image created from the specified image byte data stream.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.ResultGraphics">
+            <summary>
+            Represents a DMCC read result graphics.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.ResultGraphics.Polygons">
+            <summary>
+            The list of polygons found in the DMCC read result graphics (frame rectangle as well as boundary polygon around the code)
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.ResultGraphics.ViewBoxSize">
+            <summary>
+            View box boundaries found in the DMCC read result graphics (these are the original image dimensions)
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.ResultGraphics.OriginalSvgData">
+            <summary>
+            The original DMCC graphics result as received from the reader.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultGraphics.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cognex.DataMan.SDK.Utils.ResultGraphics"/> class.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.ResultPolygon">
+            <summary>
+            Represents a polygon in a DMCC read result graphics.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.ResultPolygon.DefaultPolygonColor">
+            <summary>
+            The default color of the polygon.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.ResultPolygon.Points">
+            <summary>
+            Contains the points that make up the polygon.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.Utils.ResultPolygon.Color">
+            <summary>
+            The color of the polygon.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultPolygon.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cognex.DataMan.SDK.Utils.ResultPolygon"/> class.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.GraphicsResultParser">
+            <summary>
+            A parser that takes a raw read result graphics descriptor (SVG data) and turns it into a ResultGraphics object.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.GraphicsResultParser.UIntToColor(System.UInt32)">
+            <summary>
+            Converts an RGB value to a Color.
+            </summary>
+            <param name="argbValue">The integer that contain the Alpha, Red, Green and Blue color components.</param>
+            <returns>The Color object created from the specified integer that contains the Alpha, Red, Green and Blue color components.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.GraphicsResultParser.Parse(System.String,System.Drawing.Rectangle)">
+            <summary>
+            Parses the specified SVG data and creates a ResultGraphics object that if rendered fits into the specified control rectangle.
+            </summary>
+            <param name="svgData">The raw SVG data received from the reader.</param>
+            <param name="displayControlRect">The rectangle into which the result will be rendered.</param>
+            <returns>The ResultGraphics object created from the specified raw SVG data.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.ResultGraphicsRenderer">
+            <summary>
+            Utility class that can be used to render graphics result to a graphics surface.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultGraphicsRenderer.PaintResults(System.Drawing.Graphics,Cognex.DataMan.SDK.Utils.ResultGraphics)">
+            <summary>
+            Renders the specified graphics results to the specified drawing surface.
+            </summary>
+            <param name="graphics">The drawing surface onto which the result graphics are rendered.</param>
+            <param name="resultGraphics">The result graphics that is rendered to the specified drawing surface.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.ResultInfo">
+            <summary>
+            Represents a set of corresponding read result.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultInfo.#ctor(System.Int32,System.Int32,System.Drawing.Image,System.String,System.String,System.String)">
+            <summary>
+            Creates a complex result.
+            </summary>
+            <param name="resultId">Result ID</param>
+            <param name="imageId">Image ID</param>
+            <param name="image">Result image</param>
+            <param name="imageGraphics">Result graphics</param>
+            <param name="readString">Read string</param>
+            <param name="readXml">Result XML</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultInfo.IsResultComplete(Cognex.DataMan.SDK.ResultTypes)">
+            <summary>
+            Checks if a complex result is complete.
+            </summary>
+            <param name="requiredResultTypes">Set of result types that make a result complete.</param>
+            <returns>True if the result is comlpete (all specified components arrived).</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.ResultId">
+            <summary>
+            Gets or sets the result's unique ID.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.ImageId">
+            <summary>
+            Gets or sets the result's Image ID.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.Image">
+            <summary>
+            Gets or sets the result's image.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.ImageGraphics">
+            <summary>
+            Gets or sets the result's image graphics. (SVG Data)
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.ReadString">
+            <summary>
+            Gets or sets the read string.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.XmlResult">
+            <summary>
+            Gets or sets the XML result.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.SubResults">
+            <summary>
+            Gets or sets the subresults.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.ResultArrivedAt">
+            <summary>
+            Gets the time stamp when the result was created (when its first component arrived).
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultInfo.HasImageId">
+            <summary>
+            Gets the presence of ImageId data in sub-results. 
+            Used mainly for internal purposes.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.ComplexResultArrivedEventHandler">
+            <summary>
+            Event handler for complex result arrival.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">Completed complex result.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.PartialResultDroppedEventHandler">
+            <summary>
+            Event handler for partial result arrival.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">Partial complex result.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.ResultCollector">
+            <summary>
+            Result collector class. Used for collecting result components by result IDs so that a result is only fired by an event if it is complete (or
+            timed out or collector result is full). The Result Collector supports 4 result types (ReadString, ReadXml, Image and ImageGraphics).
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.#ctor(Cognex.DataMan.SDK.DataManSystem,Cognex.DataMan.SDK.ResultTypes)">
+            <summary>
+            Constructor that creates a result collector instance with the specified parameters.
+            </summary>
+            <param name="system">The DataMan system that generates the results.</param>
+            <param name="expectedResultTypes">The desired set of result types to collect. The supported result types are ReadString, ReadXml, Image and ImageGraphics. Other values might result in unexpected behavior.</param>
+            <remarks>When more than one result type is specified requesting ReadXml is also recommended. Otherwise different results of a single triggering could not be linked together.</remarks>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.ClearCachedResults">
+            <summary>
+            Empties the result cache.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.EmptyResultQueue">
+            <summary>
+            Removes all currently collected results, after emitting a PartialResultDropped event for each item.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.ProcessResultQueue">
+            <summary>
+            Processes the currently collected results. Checks for complete and timed-out results and throws out the oldest results if the result cache
+            size is smaller than the amount of partial results.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.StoreReadString(System.Int32,System.String,Cognex.DataMan.SDK.Utils.ResultInfo)">
+            <summary>
+            Try to store a read string in a result item
+            </summary>
+            <param name="resultId"></param>
+            <param name="readString"></param>
+            <param name="destination"></param>
+            <returns>true if ReadString stored</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.StoreImage(System.Int32,System.Drawing.Image,Cognex.DataMan.SDK.Utils.ResultInfo)">
+            <summary>
+            Try to store an image in a result item
+            </summary>
+            <param name="imageId">ResultId of the Image</param>
+            <param name="image">Image arrived</param>
+            <param name="destination"></param>
+            <returns>true if image has been stored</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.TryParse(System.String,System.Int32@)">
+            <summary>
+            CF replacement for Int32.TryParse
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.Finalize">
+            <summary>
+            Frees resources and performs cleanup operations before the current instance of the ResultCollector class is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.ResultCollector.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the ResultCollector class.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.Utils.ResultCollector.ComplexResultArrived">
+            <summary>
+            Event for (complete) complex result arrival.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.Utils.ResultCollector.PartialResultDropped">
+            <summary>
+            Event for partial complex result arrival.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultCollector.ResultCacheLength">
+            <summary>
+            Gets or sets the size of the result collector cache (number of results).
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Utils.ResultCollector.ResultTimeOut">
+            <summary>
+            Timout value for a result. After timeout passed if the result is not complete it is dropped and a <see cref="T:Cognex.DataMan.SDK.Utils.PartialResultDroppedEventHandler"/> is fired.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.SocketKeepAlive">
+            <summary>
+            Utility class that contains methods for configuring TCP-level keep alive.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.SocketKeepAlive.SetKeepAliveOptions(System.Net.Sockets.Socket,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Configures the specified socket for keep alive.
+            </summary>
+            <param name="socket">The socket to be configured for keep alive.</param>
+            <param name="enabled">True if keep alive is to be enabled, false otherwise.</param>
+            <param name="timeout">The timeout in milliseconds that must ellapse from the last activity on the socket before keep alive frames are sent to the remote host.</param>
+            <param name="interval">The frequency in milliseconds of the keep alive frames.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Utils.WindowsCeKeepAlive">
+            <summary>
+            Utility class that implements keep alive functionality on Windows CE where TCP level keep alive is not available.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Utils.WindowsCeKeepAlive.#ctor(Cognex.DataMan.SDK.DataManSystem,System.Int32,System.Int32)">
+            <summary>
+            Constructor that creates a new WindowsCeKeepAlive object with the specified parameters.
+            </summary>
+            <param name="system">The remote system for which keep alive functionality is enabled.</param>
+            <param name="timeout">The timeout in milliseconds that must ellapse from the last activity on the socket before keep alive frames are sent to the remote host.</param>
+            <param name="interval">The frequency in milliseconds of the keep alive frames.</param>
+        </member>
+    </members>
+</doc>

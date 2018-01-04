@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cognex.DataMan.SDK.Discovery.PC</name>
+    </assembly>
+    <members>
+        <member name="T:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer">
+            <summary>
+            Discovers ethernet-based DataMan systems.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.#ctor">
+            <summary>
+            Creates a new instance of the EthSystemDiscoverer class.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.Finalize">
+            <summary>
+            Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.Discover">
+            <summary>
+            Discovers systems on the network.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.ForceNetworkSettings(System.String,System.Boolean,System.Net.IPAddress,System.Net.IPAddress,System.Net.IPAddress,System.String,System.String,System.String)">
+            <summary>
+            Forces a system to adopt certain network settings based on the MAC address of the system.
+            </summary>
+            <param name="macAddress">MAC address of the system to be forced.</param>
+            <param name="useDHCP">True to enable DHCP on the system, false otherwise.</param>
+            <param name="ipAddress">IP addres to be set on the system.</param>
+            <param name="subnetMask">Subnet mask to be set on the system.</param>
+            <param name="defaultGateway">Default gateway to be set on the system.</param>
+            <param name="username">User name to use for authentication.</param>
+            <param name="password">Password to use for authentication.</param>
+            <param name="hostName">Name of the system</param>
+            <remarks>
+            All of the network settings (except for macAddress) are always overwritten. None of the parameters ae optional, they all have to be specified everytime.
+            </remarks>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SendSetNetwork(System.Net.IPAddress,System.Net.NetworkInformation.PhysicalAddress,System.String,System.String,System.String,System.Boolean,System.Net.IPAddress,System.Net.IPAddress,System.Net.IPAddress,System.Net.IPAddress,System.String,System.Boolean)">
+            <summary>
+            Sends a message to the specified device to reconfigure its TCP/IP 
+            settings to those specified in the parameters.
+            </summary>
+            <param name="currentDeviceIp">The IP address of device to configure</param>
+            <param name="deviceMac">The MAC address of device to configure</param>
+            <param name="username">An admin username</param>
+            <param name="password">The password for the specified username</param>
+            <param name="hostname">The new host name for the device</param>
+            <param name="useDhcp">True to tell the device to use DHCP</param>
+            <param name="newDeviceIp">The new IP address for the device if not using DHCP</param>
+            <param name="subnet">The new subnet mask for the device if not using DHCP</param>
+            <param name="gateway">The new default gateway to use if not using DHCP</param>
+            <param name="dns">The new DNS server to use if not using DHCP</param>
+            <param name="domainName">The new domain name for the device if not using DHCP</param>
+            <param name="reset">True to reset all other parameters to factory default settings</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemDiscovered">
+            <summary>
+            Event that fires when a new system is discovered.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo">
+            <summary>
+            Information that describes a discovered system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.ToString">
+            <summary>
+            Overriden, returns the name of the discovered system.
+            </summary>
+            <returns>The name of the discovered system.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.CognamerDeviceTypeId">
+            <summary>
+            Gets the device type of the discovered system as Cognamer returns it.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.Type">
+            <summary>
+            Gets the type of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.Name">
+            <summary>
+            Gets the name of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.IPAddress">
+            <summary>
+            Gets the IP address of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.Port">
+            <summary>
+            The port on which the discovered system is listening for DMCC communication.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.SubnetMask">
+            <summary>
+            Gets the subnet mask of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.DefaultGateway">
+            <summary>
+            Gets the default gateway of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.MacAddress">
+            <summary>
+            Gets the MAC address of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.SerialNumber">
+            <summary>
+            Gets the serial number of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemInfo.IsDhcpEnabled">
+            <summary>
+            Gets the enabled state of DHCP of the discovered system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Discovery.EthSystemDiscoverer.SystemDiscoveredHandler">
+            <summary>
+            Event handler for SystemDiscovered event.
+            </summary>
+            <param name="systemInfo">Information about the discovered system.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer">
+            <summary>
+            Discovers DataMan systems connected to serial communication ports.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.#ctor">
+            <summary>
+            Creates a new instance of the SerSystemDiscoverer class.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.Finalize">
+            <summary>
+            Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.Discover">
+            <summary>
+            Discovers systems on the available serial communication ports.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.Dispose">
+            <summary>
+            Disposes the instance of this class.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemDiscovered">
+            <summary>
+            Event that fires when a new system is discovered.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo">
+            <summary>
+            Information that describes a discovered system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.ToString">
+            <summary>
+            Overriden, returns the name of serial port on which the system was discovered.
+            </summary>
+            <returns>The name of serial port on which the system was discovered.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.PortName">
+            <summary>
+            Gets the name of the port on which the system was discovered.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.Baudrate">
+            <summary>
+            Gets the baud rate that is used by the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.DeviceTypeId">
+            <summary>
+            Gets the Device Type Id of the discovered system as it is returned by the firmware for the GET DEVICE.ID command.
+            Its value is zero if the firmware does not support the command.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.Type">
+            <summary>
+            Gets the type of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.SerialNumber">
+            <summary>
+            Gets the serial number of the discovered system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemInfo.Name">
+            <summary>
+            Gets the name of the discovered system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.Discovery.SerSystemDiscoverer.SystemDiscoveredHandler">
+            <summary>
+            Event handler for SystemDiscovered event.
+            </summary>
+            <param name="systemInfo">Information about the discovered system.</param>
+        </member>
+    </members>
+</doc>

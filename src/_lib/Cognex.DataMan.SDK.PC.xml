@@ -1,0 +1,1576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cognex.DataMan.SDK.PC</name>
+    </assembly>
+    <members>
+        <member name="T:Cognex.DataMan.SDK.TransferDirection">
+            <summary>
+            Indicates the direction of the transfer.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.TransferDirection.Incoming">
+            <summary>
+            Tranferring data from the remote system.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.TransferDirection.Outgoing">
+            <summary>
+            Tranferring data to the remote system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ResultTypes">
+            <summary>
+            Specifies the types of results that the SDK should handle. All other result types are ignored.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.None">
+            <summary>
+            No results of any kind are requested from the reader.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.ReadString">
+            <summary>
+            Represents a simple read result string.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.ReadXml">
+            <summary>
+            Represents a read result in xml format.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.XmlStatistics">
+            <summary>
+            Represents read statistics in xml format.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.Image">
+            <summary>
+            Represents a read image.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.ImageGraphics">
+            <summary>
+            Represent an image graphics xml.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.TrainingResults">
+            <summary>
+            Represents training results in xml format.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ResultTypes.CodeQualityData">
+            <summary>
+            Represents code quality information in xml format.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SystemConnectedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.SystemConnected"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SystemDisconnectedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.SystemDisconnected"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SystemWentOnlineHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.SystemWentOnline"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SystemWentOfflineHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.SystemWentOffline"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.KeepAliveResponseMissedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.KeepAliveResponseMissed"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ReadStringArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.ReadStringArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.XmlResultArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.XmlResultArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.XmlStatisticsArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.XmlStatisticsArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.ImageArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageGraphicsArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.ImageGraphicsArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.TrainingResultArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.TrainingResultArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.CodeQualityDataArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.CodeQualityDataArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.StatusEventArrivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.StatusEventArrived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.BinaryDataTransferProgressHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.BinaryDataTransferProgress"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.OffProtocolByteReceivedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Cognex.DataMan.SDK.DataManSystem.OffProtocolByteReceived"/> event of a DataMan system.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">Provides data for the event.</param>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.DataManSystem">
+            <summary>
+            Represents a remote DataMan system.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.DataManSystem.INFINITE">
+            <summary>
+            The value used to indicate that an operation has no timeout value.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.DataManSystem.IsPublicBuild">
+            <summary>
+            Signals the public / internal build type of the DataMan SDK
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.#ctor(Cognex.DataMan.SDK.ISystemConnector)">
+            <summary>
+            Initializes a new instance of the DataManSystem class using the specified connector.
+            </summary>
+            <param name="connector">The connector to use by this DataManSystem instance to connect to a remote system.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Finalize">
+            <summary>
+            Frees resources and performs cleanup operations before the current instance of the DataManSystem class is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the DataManSystem class.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Connect">
+            <summary>
+            Connects to a remote system using the connector specified as a parameter to the constructor.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Connect(System.Int32)">
+            <summary>
+            Connects to a remote system. Times out if connection cannot be established within the specified time interval.
+            NOTE: The <paramref name="timeout" /> parameter is ignored on WindowsCE.
+            </summary>
+            <param name="timeout">The maximum number of milliseconds allowed for the connection to establish.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Disconnect">
+            <summary>
+            Disconnects from a remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SetKeepAliveOptions(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Enables or disables the keep alive option and sets its parameters.
+            </summary>
+            <param name="enabled">Enables or disables the connection keep alive option.</param>
+            <param name="timeout">Specifies the timeout, in milliseconds, with no activity until the first keep-alive packet is sent.</param>
+            <param name="interval">Specifies the interval, in milliseconds, between when successive keep-alive packets are sent if no acknowledgement is received.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SetResultTypes(Cognex.DataMan.SDK.ResultTypes)">
+            <summary>
+            Sets which result types the SDK should handle.
+            </summary>
+            <param name="resultTypes">The result types that the user is interested in.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommand(System.String)">
+            <summary>
+            Sends the specified command to the remote system. This method blocks, and does not return until the response
+            from the remote system is received or an error occurs.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommand(System.String,System.Int32)">
+            <summary>
+            Sends the specified command to the remote system. This method blocks, and does not return until the response
+            from the remote system is received or an error occurs. The maximum amount of time that may ellapse
+            between sending the command to the remote system and receiving the response from the system is
+            specified by the <paramref name="timeout"/> parameter.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="timeout">The maximum amount of time to wait for a response after the command was sent to
+            the remote system. If a timeout occurs, this function throws an exception.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommand(System.String,System.Byte[])">
+            <summary>
+            Sends the specified command and binary data to the remote remote system. This method blocks, and does not return until the response
+            from the remote system is received or an error occurs.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="data">The binary data to send to the remote system.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommand(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Sends the specified command and binary data to the remote system. This method blocks, and does not return until the response
+            from the remote system is received or an error occurs. The maximum amount of time that may ellapse between sending
+            the command to the remote system and receiving the response from it is specified by the <paramref name="timeout"/> parameter.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="data">The binary data to send to the remote system.</param>
+            <param name="timeout">The maximum amount of time to wait for a response after the command and all binary data were sent to
+            the remote system. If a timeout occurs, this function throws an exception.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommandWithExpectedBinaryResult(System.String)">
+            <summary>
+            Sends the specified command to the remote system which is expected to produce a binary 
+            result. This method blocks, and does not return until the response from the remote system is 
+            received or an error occurs.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommandWithExpectedBinaryResult(System.String,System.Int32)">
+            <summary>
+            Sends the specified command to the remote system which is expected to produce a binary result. This method 
+            blocks, and does not return until the response from the remote system is received or an error occurs. 
+            The maximum amount of time that may ellapse between sending the command to the remote system and 
+            receiving the response from the system is specified by the <paramref name="timeout"/> parameter.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="timeout">The maximum amount of time to wait for a response after the command was sent to
+            the remote system. If a timeout occurs, this function throws an exception.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommandWithExpectedBinaryResult(System.String,System.Byte[])">
+            <summary>
+            Sends the specified command and binary data to the remote system  which is expected to produce a binary 
+            result. This method blocks, and does not return until the response from the remote system is received 
+            or an error occurs.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="data">The binary data to send to the remote system.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SendCommandWithExpectedBinaryResult(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Sends the specified command and binary data to the remote system which is expected to produce a binary result. This method blocks, 
+            and does not return until the response from the remote system is received or an error occurs. The maximum amount of time that 
+            may ellapse between sending the command to the remote system and receiving the response from it is specified by the 
+            <paramref name="timeout"/> parameter. The target system is expected to produce binary result.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="data">The binary data to send to the remote system.</param>
+            <param name="timeout">The maximum amount of time to wait for a response after the command and all binary data were sent to
+            the remote system. If a timeout occurs, this function throws an exception.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginSendCommand(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Sends the specified command asynchronously to the remote system and returns immediately. Use the EndSendCommand
+            method with the IAsyncResult returned from this method to wait for the command to finish. You can check if the
+            command was acknowledged/rejected by the remote system by reading the IsCompleted property of the returned
+            IAsyncResult instance.
+            </summary>
+            <param name="command">The command to send to the remote system.</param>
+            <param name="callback">Optional AsyncCallback delegate to call when the asynchronous operation is completed.</param>
+            <param name="state">An object that contains state information for this request.</param>
+            <returns>An IAsyncResult that references the asynchronous operation.</returns>
+            <remarks>For each BeginSendCommand call there must be a corresponding EndSendCommand call.</remarks>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndSendCommand(System.IAsyncResult)">
+            <summary>
+            Waits for a pending asynchronous send operation to complete. This method blocks until the send operation has
+            completed or an error occured.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+            <returns>The DMCC response returned by the remote system.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Cancel(System.IAsyncResult)">
+            <summary>
+            Cancels a pending command represented by the specified IAsyncResult object.
+            </summary>
+            <param name="asyncResult">The asynchronous operation that is to be canceled.</param>
+            <returns>True if the command was successfully canceled, false otherwise.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.GetConfig(System.String)">
+            <summary>
+            Gets and saves the configuration file of the connected remote system.
+            </summary>
+            <param name="fileName">File name to save the configuration to.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginGetConfig(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins getting the configuration file of the connected remote system.
+            </summary>
+            <param name="fileName">File name to save the configuration to.</param>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndGetConfig(System.IAsyncResult)">
+            <summary>
+            Completes a pending configuration retrieval operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.SetConfig(System.String)">
+            <summary>
+            Restores a configuration in the connected remote system.
+            </summary>
+            <param name="fileName">Name and path of the configuration file.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginSetConfig(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins restoring a configuration file on the connected remote system.
+            </summary>
+            <param name="fileName">Name and path of the configuration file.</param>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndSetConfig(System.IAsyncResult)">
+            <summary>
+            Completes a pending restore operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Backup(System.String)">
+            <summary>
+            Backs up the configuration of the connected remote system.
+            </summary>
+            <param name="fileName">Name of the backup file into which configuration data is saved.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginBackup(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins backing up the configuration of the connected remote system.
+            </summary>
+            <param name="fileName">Name of the backup file to be generated.</param>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndBackup(System.IAsyncResult)">
+            <summary>
+            Completes a pending backup operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.Restore(System.String)">
+            <summary>
+            Restores a backup file on the connected remote system.
+            </summary>
+            <param name="fileName">Name and path of the backup file.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginRestore(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins restoring a backup file on the connected remote system.
+            </summary>
+            <param name="fileName">Name and path of the backup file.</param>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndRestore(System.IAsyncResult)">
+            <summary>
+            Completes a pending restore operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.UploadFeatureKey(System.String)">
+            <summary>
+            Uploads feature key license(s) to the device.
+            </summary>
+            <param name="fileName">name and path of the license file</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginUploadFeatureKey(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            Uploads feature key license(s) to the device.
+            </summary>
+            <param name="fileName">name and path of the license file</param>
+            <param name="callback">callback function to call when operation completes</param>
+            <param name="state">state object to maintain stat information (can be null)</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndUploadFeatureKey(System.IAsyncResult)">
+            <summary>
+            Waits for the feature key upload operation to complete.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.UpdateFirmware(System.String,System.IO.Stream,System.Boolean,System.Int32)">
+            <summary>
+            Performs a firmware update.
+            </summary>
+            <param name="strippedFileName">Descriptive firmware file name, to be passed to the device</param>
+            <param name="fwFileStream">Stream of firmware data</param>
+            <param name="reboot">Performs reboot after the update</param>
+            <param name="timeout">The maximal amount of time within a response from the device is expected.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginUpdateFirmware(System.String,System.IO.Stream,System.Boolean,System.AsyncCallback,System.Object,System.Int32)">
+            <summary>
+            Starts an asynchronous firmware update process.
+            </summary>
+            <param name="strippedFileName">Descriptive firmware file name, to be passed to the device</param>
+            <param name="fwFileStream">Stream of firmware data</param>
+            <param name="reboot">Performs reboot after the update</param>
+            <param name="callback">Callback</param>
+            <param name="state">User object to pass to the callback</param>
+            <param name="timeout">The maximal amount of time within a response from the device is expected.</param>
+            <returns>Async result object to wait for</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndUpdateFirmware(System.IAsyncResult)">
+            <summary>
+            Blocks until async object completes, which was created by BeginUpdateFirmware() method.
+            </summary>
+            <param name="asyncResult">Async result object we are waiting for</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.CheckFirmware(System.IO.Stream,System.String@)">
+            <summary>
+            Checks if the specified firmware update is possible.
+            </summary>
+            <param name="fwFileStream">Stream of firmware data</param>
+            <param name="errorMessage">A description of the reason of the failure of the check.</param>
+            <returns>If the firmware update is possible</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.GetLiveImage(Cognex.DataMan.SDK.ImageFormat,Cognex.DataMan.SDK.ImageSize,Cognex.DataMan.SDK.ImageQuality)">
+            <summary>
+            Gets the latest image in live display mode from the connected remote system.
+            </summary>
+            <param name="imageFormat">Image format.</param>
+            <param name="imageSize">Image size.</param>
+            <param name="imageQuality">Image quality.</param>
+            <returns>The latest live display image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginGetLiveImage(Cognex.DataMan.SDK.ImageFormat,Cognex.DataMan.SDK.ImageSize,Cognex.DataMan.SDK.ImageQuality,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins getting the latest image in live display mode from the connected remote system.
+            </summary>
+            <param name="imageFormat">Image format.</param>
+            <param name="imageSize">Image size.</param>
+            <param name="imageQuality">Image quality.</param>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndGetLiveImage(System.IAsyncResult)">
+            <summary>
+            Completes a pending live image retrieval operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+            <returns>The latest live display image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.GetLastReadImage">
+            <summary>
+            Gets the last read image from the connected remote system.
+            </summary>
+            <returns>The last read image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginGetLastReadImage(System.AsyncCallback,System.Object)">
+            <summary>
+            Begins getting the last read image from the connected remote system.
+            </summary>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndGetLastReadImage(System.IAsyncResult)">
+            <summary>
+            Completes a pending last read image retrieval operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+            <returns>The last read image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.GetBufferedImage(System.Int32,Cognex.DataMan.SDK.ImageFormat,Cognex.DataMan.SDK.ImageSize,Cognex.DataMan.SDK.ImageQuality)">
+            <summary>
+            Gets a buffered image from the connected remote system.
+            </summary>
+            <param name="index">Index of the image in the buffer to retrieve.</param>
+            <param name="imageFormat">Image format.</param>
+            <param name="imageSize">Image size.</param>
+            <param name="imageQuality">Image quality.</param>
+            <returns>The specified buffered image.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.BeginGetBufferedImage(System.Int32,Cognex.DataMan.SDK.ImageFormat,Cognex.DataMan.SDK.ImageSize,Cognex.DataMan.SDK.ImageQuality,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins getting a buffered image from the connected remote system.
+            </summary>
+            <param name="index">Index of the image in the buffer to retrieve.</param>
+            <param name="imageFormat">Image format.</param>
+            <param name="imageSize">Image size.</param>
+            <param name="imageQuality">Image quality.</param>
+            <param name="callback">Callback function to be called when operation completes.</param>
+            <param name="state">User-defined state associated with this asynchronous operation.</param>
+            <returns>IAsyncResult object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DataManSystem.EndGetBufferedImage(System.IAsyncResult)">
+            <summary>
+            Completes a pending buffered image retrieval operation.
+            </summary>
+            <param name="asyncResult">An IAsyncResult that stores state information and any user defined data for this asynchronous operation.</param>
+            <returns>The specified buffered image.</returns>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.SystemConnected">
+            <summary>
+            Occurs when a remote system is successfully connected.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.SystemDisconnected">
+            <summary>
+            Occurs when a remote system disconnected.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.SystemWentOnline">
+            <summary>
+            Occurs when a connected remote system goes online.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.SystemWentOffline">
+            <summary>
+            Occurs when a connected remote system goes offline.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.KeepAliveResponseMissed">
+            <summary>
+            Occurs when no response is received for a keep-alive message.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.ReadStringArrived">
+            <summary>
+            Occurs when a read strings arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.XmlResultArrived">
+            <summary>
+            Occurs when XML read results arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.XmlStatisticsArrived">
+            <summary>
+            Occurs when XML statistics arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.ImageArrived">
+            <summary>
+            Occurs when an image arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.ImageGraphicsArrived">
+            <summary>
+            Occurs when image graphics data arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.TrainingResultArrived">
+            <summary>
+            Occurs when training results data arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.CodeQualityDataArrived">
+            <summary>
+            Occurs when code quality data arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.StatusEventArrived">
+            <summary>
+            Occurs when a status event arrived from a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.BinaryDataTransferProgress">
+            <summary>
+            Occurs when a binary data transfer is in progress between the host and a connected remote system.
+            </summary>
+        </member>
+        <member name="E:Cognex.DataMan.SDK.DataManSystem.OffProtocolByteReceived">
+            <summary>
+            Occurs when an unexpected (off protocol) byte is received from the remote system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.DefaultTimeout">
+            <summary>
+            Gets or sets the default timeout value for all operations.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.ExtraHeaderData">
+            <summary>
+            Gets or sets the extra header data sent with all commands.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.ResultTypes">
+            <summary>
+            Gets the result types that should be handled by the SDK. All other result types will be ignored.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.ExpectReadStringAsBinaryResponse">
+            <summary>
+            Determines if new syntax expected for DMCC results arriving. This syntax is the default for newer device firmware versions.
+            The new format contains the number of bytes in the first row, then the result bytes follow.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.Encoding">
+            <summary>
+            Gets or sets the encoding object used to convert a series of bytes from the reader to a string.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.Connector">
+            <summary>
+            Returns the connector that this DataManSystem instance uses to connect to a remote system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DataManSystem.State">
+            <summary>
+            Returns the current connection state of this DataManSystem instance.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ReadStringArrivedEventArgs">
+            <summary>
+            Provides data for the read string arrived event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ReadStringArrivedEventArgs.ResultId">
+            <summary>
+            Gets the identifier of the result. This value can be used to match the read string with other result types, like images, image graphics or XML results.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ReadStringArrivedEventArgs.ReadString">
+            <summary>
+            Gets the value of the string read by the system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.XmlResultArrivedEventArgs">
+            <summary>
+            Provides data for the XML result arrived event.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.XmlResultArrivedEventArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.XmlResultArrivedEventArgs.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="resultId">Result ID</param>
+            <param name="xmlResult">XML Result as a string</param>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.XmlResultArrivedEventArgs.ResultId">
+            <summary>
+            Gets the identifier of the result. This value can be used to match the result XML with other result types, like images, image graphics or read strings.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.XmlResultArrivedEventArgs.XmlResult">
+            <summary>
+            Gets the result of a read in XML format.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.XmlStatisticsArrivedEvent">
+            <summary>
+            Provides data for the XML statistics arrived event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.XmlStatisticsArrivedEvent.XmlStatistics">
+            <summary>
+            Gets the read statistics in XML format.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageArrivedEventArgs">
+            <summary>
+            Provides data for the image arrived event.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ImageArrivedEventArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ImageArrivedEventArgs.#ctor(System.Int32,System.Drawing.Image)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="resultId">Result ID</param>
+            <param name="image">Image</param>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ImageArrivedEventArgs.ResultId">
+            <summary>
+            Gets the identifier of the result. This value can be used to match the image with other result types, like read strings, image graphics or XML results.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ImageArrivedEventArgs.Image">
+            <summary>
+            Gets the image that arrived from the remote system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageGraphicsArrivedEventArgs">
+            <summary>
+            Provides data for the image graphics arrived event.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ImageGraphicsArrivedEventArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ImageGraphicsArrivedEventArgs.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="resultId">Result ID</param>
+            <param name="imageGraphics">Image graphics</param>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ImageGraphicsArrivedEventArgs.ResultId">
+            <summary>
+            Gets the identifier of the result. This value can be used to match the image graphics with other result types, like read strings, image or XML results.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ImageGraphicsArrivedEventArgs.ImageGraphics">
+            <summary>
+            Gets the image graphics in XML format that arrived from the remote system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.TrainingResultArrivedEventArgs">
+            <summary>
+            Provides data for the training result arrived event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.TrainingResultArrivedEventArgs.TrainingResult">
+            <summary>
+            Gets the result of the training that arrived from the remote system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.CodeQualityDataArrivedEventArgs">
+            <summary>
+            Provides data for the code quality data arrived event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.CodeQualityDataArrivedEventArgs.CodeQualityData">
+            <summary>
+            Gets the code quality data that arrived from the remote system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.StatusEventArrivedEventArgs">
+            <summary>
+            Provides data for the status event arrived event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.StatusEventArrivedEventArgs.StatusEventData">
+            <summary>
+            Gets the XML data that describes the details of the status event.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.BinaryDataTransferProgressEventArgs">
+            <summary>
+            Provides data for the binary data transfer in progress event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.BinaryDataTransferProgressEventArgs.Direction">
+            <summary>
+            Gets the direction of the data transfer. <seealso cref="T:Cognex.DataMan.SDK.TransferDirection"/>
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.BinaryDataTransferProgressEventArgs.TotalDataSize">
+            <summary>
+            Gets the total number of bytes being transferred.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.BinaryDataTransferProgressEventArgs.BytesTransferred">
+            <summary>
+            Gets the number of bytes already transferred.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.OffProtocolByteReceivedEventArgs">
+            <summary>
+            Provides data for the off protocol byte received event.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.OffProtocolByteReceivedEventArgs.Byte">
+            <summary>
+            Gets the byte that violated the DMCC protocol.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageFormat">
+            <summary>
+            Indicates the image format type for live displays or process monitor images.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageFormat.bitmap">
+            <summary>
+            Bitmap format.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageFormat.jpeg">
+            <summary>
+            Jpeg format.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageQuality">
+            <summary>
+            Image quality used when getting live image or process monitor images.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageQuality.Low">
+            <summary>
+            Low image quality for jpeg format.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageQuality.Medium">
+            <summary>
+            Medium image quality for jpeg format.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageQuality.High">
+            <summary>
+            High image quality for jpeg format.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageSize">
+            <summary>
+            Image size.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageSize.Full">
+            <summary>
+            Full sized image.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageSize.Quarter">
+            <summary>
+            Image scaled down by 1/4.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageSize.Sixteenth">
+            <summary>
+            Image scaled down by 1/16.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageSize.Sixtyforth">
+            <summary>
+            Image scaled down by 1/64.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ImageType">
+            <summary>
+            Image type to transfer.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageType.All">
+            <summary>
+            Automatically transfer all images.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageType.NoRead">
+            <summary>
+            Automatically transfer only no read images.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ImageType.Read">
+            <summary>
+            Automatically transfer only read images.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.DmccResponse">
+            <summary>
+            Represents a DMCC response sent by a remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.DmccResponse.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DmccResponse.CommandId">
+            <summary>
+            Id of the command
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DmccResponse.ResponseId">
+            <summary>
+            Id of the response
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DmccResponse.PayLoad">
+            <summary>
+            Payload content
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DmccResponse.BinaryData">
+            <summary>
+            Binary data
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.DmccResponse.CommandRoundtrip">
+            <summary>
+            Command round trip time
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.EthSystemConnector">
+            <summary>
+            Represents a connector that can connect to an ethernet based system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ISystemConnector">
+            <summary>
+            Represents a connector that can connect to a remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ISystemConnector.Connect">
+            <summary>
+            Connects to a remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ISystemConnector.Connect(System.Int32)">
+            <summary>
+            Connects to a remote system, but fails if connection cannpt be established in the specified time interval.
+            Note: connection with timeout does not work on WidnowsCE
+            </summary>
+            <param name="timeout">The maximum number of milliseconds allowed for the connection to establish.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ISystemConnector.Disconnect">
+            <summary>
+            Disconnects from a remote system.
+            </summary>
+            <returns>True if disconnection was successful, false if remote system already disconnected.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ISystemConnector.Read(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Read bytes from a connected remote system.
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the remote system.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin storing the data read from the remote system.</param>
+            <param name="count">The maximum number of bytes to read from the remote system.</param>
+            <param name="timeout">The maximum amount of time (in milliseconds) to wait for data to arrive.</param>
+            <returns>The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available. If the return value is -1 it indicates that an error occured while reading. If the return value is 0, the read operation timed out.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ISystemConnector.Write(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sends a sequence of bytes to a connected remote system.
+            </summary>
+            <param name="buffer">An array of bytes. This method sends count bytes from buffer to the remote system.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin sending bytes to the remote system.</param>
+            <param name="count">The number of bytes to send.</param>
+            <param name="timeout">The maximum amount of time (in milliseconds) to wait for data to be sent.</param>
+            <returns>True if the write was successful, false otherwise.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ISystemConnector.State">
+            <summary>
+            Returns the current state of the connector.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ISystemConnector.LastOperationTime">
+            <summary>
+            Returns the time of the last successful read or write operation.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ISystemConnector.Logger">
+            <summary>
+            Optional logger for debugging purposes.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.#ctor(System.Net.IPAddress)">
+            <summary>
+            Creates a new instance of the ethernet connector with the specified system IP address.
+            </summary>
+            <param name="address">The IP address of remote ethernet system.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Creates a new instance of the ethernet connector with the specified system address and port.
+            </summary>
+            <param name="address">The IP address of remote ethernet system.</param>
+            <param name="port">The TCP/IP port via which communication is performed with the remote ethernet system.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Finalize">
+            <summary>
+            Frees resources and performs cleanup operations before the current instance of the EthSystemConnector class is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the EthSystemConnector class.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Connect">
+            <summary>
+            Connects to a remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Connect(System.Int32)">
+            <summary>
+            Connects to a remote system, but fails if connection cannpt be established in the specified time interval.
+            NOTE: The <paramref name="timeout" /> parameter is ignored on WindowsCE.
+            </summary>
+            <param name="timeout">The maximum number of milliseconds allowed for the connection to establish.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Disconnect">
+            <summary>
+            Disconnects from a remote system.
+            </summary>
+            <returns>True if disconnection was successful, false if remote system already disconnected.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Read(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Read bytes from a connected remote system.
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the remote system.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin storing the data read from the remote system.</param>
+            <param name="count">The maximum number of bytes to read from the remote system.</param>
+            <param name="timeout">The maximum amount of time (in milliseconds) to wait for data to arrive.</param>
+            <returns>The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available. If the return value is -1 it indicates that an error occured while reading. If the return value is 0, the read operation timed out.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.EthSystemConnector.Write(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sends a sequence of bytes to a connected remote system.
+            </summary>
+            <param name="buffer">An array of bytes. This method sends count bytes from buffer to the remote system.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin sending bytes to the remote system.</param>
+            <param name="count">The number of bytes to send.</param>
+            <param name="timeout">The maximum amount of time (in milliseconds) to wait for data to be sent.</param>
+            <returns>True if the write was successful, false otherwise.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.Address">
+            <summary>
+            Gets the IP address of the remote ethernet system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.Port">
+            <summary>
+            Gets the TCP/IP port via which communication is performed with the remote ethernet system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.UserName">
+            <summary>
+            Gets the user name used to authenticate with the remote ethernet system.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.Password">
+            <summary>
+            Gets the password used during authentication.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.Socket">
+            <summary>
+            Gets the raw socket through which communication is performed.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.State">
+            <summary>
+            Returns the current state of the connector.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.LastOperationTime">
+            <summary>
+            Returns the time of the last successful read or write operation.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.EthSystemConnector.Logger">
+            <summary>
+            Optional logger for debugging purposes.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.AlreadyConnectedException">
+            <summary>
+            Thrown if a connection to a remote system already exists.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.DataManException">
+            <summary>
+            Base class for all DataMan SDK exceptions.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.AlreadyConnectedException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.InvalidFirmwareFileException">
+            <summary>
+            Thrown if the firmware to be uploaded is invalid
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidFirmwareFileException.#ctor(System.String)">
+            <summary>
+            Creates a new InvalidFirmwareFileException instance.
+            </summary>
+            <param name="reason">The reason why this exception was thrown.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidFirmwareFileException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.InvalidFirmwareFileException.Reason">
+            <summary>
+            Gets the reason of the exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SystemOfflineException">
+            <summary>
+            Thrown if the remote system is currently offline and therefore cannot accept commands.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SystemOfflineException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.IncorrectChecksumException">
+            <summary>
+            Thrown if the remote system rejected a command because the checksums do not match.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.IncorrectChecksumException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the IncorrectChecksumException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.IncorrectChecksumException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.IncorrectChecksumException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.InvalidCommandException">
+            <summary>
+            Thrown if the connected remote system rejected the specified command.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidCommandException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the InvalidCommandException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidCommandException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.InvalidCommandException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.InvalidResponseException">
+            <summary>
+            Thrown if the response sent by the connected remote system is invalid or is in invalid format.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidResponseException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the InvalidResponseException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidResponseException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.InvalidResponseException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.InvalidParameterException">
+            <summary>
+            Thrown if the specified parameters were rejected by the connected remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidParameterException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the InvalidParameterException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.InvalidParameterException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.InvalidParameterException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.LoginFailedException">
+            <summary>
+            Thrown if authentication to a remote system fails during the connection process.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.LoginFailedException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.OperationCanceledException">
+            <summary>
+            Thrown if a pending operation was canceled.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.OperationCanceledException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the OperationCanceledException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.OperationCanceledException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.OperationCanceledException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ParameterRejectedException">
+            <summary>
+            Thrown if at least one of the parameters sepcified for a command was rejected by the connected remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ParameterRejectedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ParameterRejectedException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ParameterRejectedException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ParameterRejectedException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SystemDisconnectedException">
+            <summary>
+            Thrown if the remote system is not connected.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SystemDisconnectedException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ConnectionState">
+            <summary>
+            Indicates the connection staste if a DataManSystem object.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ConnectionState.Disconnected">
+            <summary>
+            Indicates that the connector is not connected to any remote system.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ConnectionState.Connecting">
+            <summary>
+            Indicates that the connector is in the process of establishing a connection to a remote system.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ConnectionState.Connected">
+            <summary>
+            Indicates that the connector is connected to a remote system.
+            </summary>
+        </member>
+        <member name="F:Cognex.DataMan.SDK.ConnectionState.Disconnecting">
+            <summary>
+            Indicates that the connector is in the process of tearing down an existing connection to a remote system.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.UnknownErrorException">
+            <summary>
+            Thrown if the connected remote system returns an unidentified error.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.UnknownErrorException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the UnknownErrorException class.
+            </summary>
+            <param name="command">The command that triggered the exception.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.UnknownErrorException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.UnknownErrorException.Command">
+            <summary>
+            Returns the command that triggered this exception.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.FileLogger">
+            <summary>
+            Used for debugging purposes. Logs important events and/or traffic between the remote system and the SDK to a disk file.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.ILogger">
+            <summary>
+            Used for debugging purposes. Logs important events and/or traffic between the remote system and the SDK.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ILogger.GetNextUniqueSessionId">
+            <summary>
+            Returns a unique identifier that can be used to track logs and traffic data of one session. This function is
+            called by the DataManSystem when a connection is being established.
+            </summary>
+            <returns>A new unique identifier that can be used to distinguish logs and traffic data of different communication sessions.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ILogger.Log(System.String,System.String)">
+            <summary>
+            Writes a log entry.
+            </summary>
+            <param name="function">function name for which the log entry is created</param>
+            <param name="message">log message</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.ILogger.LogTraffic(System.Int32,System.Boolean,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Logs a read or write operation.
+            </summary>
+            <param name="sessionId">The unique identifier of the session to which this log belongs.</param>
+            <param name="isRead">True if a read operation is logged, false otherwise.</param>
+            <param name="buffer">Buffer that contains the bytes that were read / written.</param>
+            <param name="offset">Offset in the buffer to log from.</param>
+            <param name="count">Number of bytes to write to the log from the buffer.</param>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.ILogger.Enabled">
+            <summary>
+            Gets or sets the enabled state of the TraficLogger.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.FileLogger.#ctor(System.String)">
+            <summary>
+            Constructor for FileLogger class
+            </summary>
+            <param name="logFileName">The name of the log file to write</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.FileLogger.GetNextUniqueSessionId">
+            <summary>
+            Returns a unique identifier that can be used to track logs and traffic data of one session.
+            </summary>
+            <returns>A new unique identifier that can be used to distinguish logs and traffic data of different communication sessions.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.FileLogger.Log(System.String,System.String)">
+            <summary>
+            Writes a log entry.
+            </summary>
+            <param name="function">function name for which the log entry is created</param>
+            <param name="message">log message</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.FileLogger.LogTraffic(System.Int32,System.Boolean,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Logs a read or write operation.
+            </summary>
+            <param name="sessionId">The unique identifier of the session to which this log belongs.</param>
+            <param name="isRead">True if a read operation is logged, false otherwise.</param>
+            <param name="buffer">Buffer that contains the bytes that were read / written.</param>
+            <param name="offset">Offset in the buffer to log from.</param>
+            <param name="count">Number of bytes to write to the log from the buffer.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.FileLogger.Dispose">
+            <summary>
+            Implement IDisposable. 
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.FileLogger.Finalize">
+            <summary>
+            FileLogger destructor
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.FileLogger.Enabled">
+            <summary>
+            Gets or sets the enabled state of the FileLogger.
+            </summary>
+        </member>
+        <member name="T:Cognex.DataMan.SDK.SerSystemConnector">
+            <summary>
+            Represents a connector that can connect to a system via a serial communication port.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the serial port connector with the specified communication port name.
+            </summary>
+            <param name="portName">The name of the communication port to which the system is connected.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates a new instance of the serial port connector with the specified communication port name and baud rate.
+            </summary>
+            <param name="portName">The name of the communication port to which the system is connected.</param>
+            <param name="baudrate">The baudrate of the communication.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.#ctor(System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits,System.IO.Ports.Handshake)">
+            <summary>
+            Creates a new instance of the serial port connector with the specified communication port name and baud rate.
+            </summary>
+            <param name="portName">The name of the communication port to which the system is connected.</param>
+            <param name="baudrate">The baudrate of the communication.</param>
+            <param name="parity">The parity-checking protocol to use.</param>
+            <param name="dataBits">The number of data bits to use.</param>
+            <param name="stopBits">The standard number of stop bits per byte.</param>
+            <param name="handshake">The handshaking protocol for serial port transmission of data.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Finalize">
+            <summary>
+            Frees resources and performs cleanup operations before the current instance of the SerSystemConnector class is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the SerSystemConnector class.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Connect">
+            <summary>
+            Connects to a remote system.
+            </summary>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Connect(System.Int32)">
+            <summary>
+            Connects to a remote system, but fails if connection cannpt be established in the specified time interval.
+            NOTE: The <paramref name="timeout" /> parameter is ignored on WindowsCE.
+            </summary>
+            <param name="timeout">The maximum number of milliseconds allowed for the connection to establish.</param>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Disconnect">
+            <summary>
+            Disconnects from a remote system.
+            </summary>
+            <returns>True if disconnection was successful, false if remote system already disconnected.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Read(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Read bytes from a connected remote system.
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the remote system.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin storing the data read from the remote system.</param>
+            <param name="count">The maximum number of bytes to read from the remote system.</param>
+            <param name="timeout">The maximum amount of time (in milliseconds) to wait for data to arrive.</param>
+            <returns>The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available. If the return value is -1 it indicates that an error occured while reading. If the return value is 0, the read operation timed out.</returns>
+        </member>
+        <member name="M:Cognex.DataMan.SDK.SerSystemConnector.Write(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sends a sequence of bytes to a connected remote system.
+            </summary>
+            <param name="buffer">An array of bytes. This method sends count bytes from buffer to the remote system.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin sending bytes to the remote system.</param>
+            <param name="count">The number of bytes to send.</param>
+            <param name="timeout">The maximum amount of time (in milliseconds) to wait for data to be sent.</param>
+            <returns>True if the write was successful, false otherwise.</returns>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.PortName">
+            <summary>
+            Gets the name of the communication port to which the system is connected. 
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.Baudrate">
+            <summary>
+            Gets the serial baud rate.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.Parity">
+            <summary>
+            Gets the parity-checking protocol currently in use.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.DataBits">
+            <summary>
+            Gets the number of data bits.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.StopBits">
+            <summary>
+            Gets the standard number of stop bits per byte.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.Handshake">
+            <summary>
+            Gets the handshaking protocol for serial port transmission of data.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.State">
+            <summary>
+            Returns the current state of the connector.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.LastOperationTime">
+            <summary>
+            Returns the time of the last successful read or write operation.
+            </summary>
+        </member>
+        <member name="P:Cognex.DataMan.SDK.SerSystemConnector.Logger">
+            <summary>
+            Optional logger for debugging purposes.
+            </summary>
+        </member>
+    </members>
+</doc>

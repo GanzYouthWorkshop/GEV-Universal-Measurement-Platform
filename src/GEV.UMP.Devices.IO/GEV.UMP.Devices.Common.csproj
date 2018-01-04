@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB9361E8-83BC-4C39-ABEF-7A14FA41B627}</ProjectGuid>
+    <ProjectGuid>{AD592EE8-91B1-4D2A-AD26-3243DD94C7A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GEV.UMP.Configuration</RootNamespace>
-    <AssemblyName>GEV.UMP.Configuration</AssemblyName>
+    <RootNamespace>GEV.UMP.Devices.IO</RootNamespace>
+    <AssemblyName>GEV.UMP.Devices.IO</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,13 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NodeMap\NodeInformation.cs" />
-    <Compile Include="NodeMap\NodeMap.cs" />
-    <Compile Include="NodeMap\NodeType.cs" />
-    <Compile Include="Parameters\Correction.cs" />
-    <Compile Include="Parameters\Parameter.cs" />
-    <Compile Include="Parameters\Tolerance.cs" />
+    <Compile Include="Automation\PLC.cs" />
+    <Compile Include="Automation\PLCVariable.cs" />
+    <Compile Include="Automation\PLCVariableUpdateMode.cs" />
+    <Compile Include="GPIO\ArduinoGPIO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GEV.UMP.Core\GEV.UMP.Core.csproj">
+      <Project>{5b5116a2-d371-4345-980b-ca88750f1b13}</Project>
+      <Name>GEV.UMP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEV.UMP.Utils\GEV.UMP.Utils.csproj">
+      <Project>{069ec950-e431-4fec-af80-00ab93057e4d}</Project>
+      <Name>GEV.UMP.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

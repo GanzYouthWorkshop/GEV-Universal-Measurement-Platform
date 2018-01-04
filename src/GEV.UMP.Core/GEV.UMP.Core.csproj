@@ -40,7 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentStatus.cs" />
+    <Compile Include="Devices\ICaptureDevice.cs" />
+    <Compile Include="Devices\IDevice.cs" />
+    <Compile Include="Devices\IInputDevice.cs" />
+    <Compile Include="Devices\IIODevice.cs" />
+    <Compile Include="Devices\IOutputDevice.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="Processors\IProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\ISample.cs" />
+    <Compile Include="Samples\ISampleCollection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
