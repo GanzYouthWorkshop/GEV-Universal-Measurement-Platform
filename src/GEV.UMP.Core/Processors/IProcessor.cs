@@ -10,10 +10,10 @@ namespace GEV.UMP.Core.Processors
 {
     public interface IProcessor : IComponent
     {
-        ConcurrentQueue<ISample> Samples { get; }
+        ConcurrentQueue<ISampleUnit> Samples { get; }
 
         void Run();
 
-        event EventHandler<ISample> ProcessingComplete;
+        event EventHandler<ISampleUnit> ProcessingComplete;
     }
 }

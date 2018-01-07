@@ -4,18 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GEV.UMP.Core.Data;
 
 namespace GEV.UMP.Devices.IO.GPIO
 {
     public class ArduinoGPIO : IInputDevice, IOutputDevice
     {
-        public Dictionary<string, object> Values
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public KeyedCollection<IOVariable> Values { get; }
 
         public void ReadAllValues()
         {

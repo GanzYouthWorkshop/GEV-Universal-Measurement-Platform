@@ -8,5 +8,7 @@ namespace GEV.UMP.Core.Samples
 {
     public interface ISample
     {
+        ulong ItemID { get; set; }
+        List<ISampleUnit> Items { get; }
     }
 }

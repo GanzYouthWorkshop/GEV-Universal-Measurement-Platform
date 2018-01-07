@@ -40,13 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLineParser.cs" />
     <Compile Include="NodeMap\NodeInformation.cs" />
     <Compile Include="NodeMap\NodeMap.cs" />
-    <Compile Include="NodeMap\NodeType.cs" />
     <Compile Include="Parameters\Correction.cs" />
     <Compile Include="Parameters\Parameter.cs" />
     <Compile Include="Parameters\Tolerance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GEV.UMP.Core\GEV.UMP.Core.csproj">
+      <Project>{5B5116A2-D371-4345-980B-CA88750F1B13}</Project>
+      <Name>GEV.UMP.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

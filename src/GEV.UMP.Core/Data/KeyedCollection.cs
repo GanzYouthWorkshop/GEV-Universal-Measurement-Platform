@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GEV.UMP.Utils
+namespace GEV.UMP.Core.Data
 {
     public class KeyedCollection<T> : List<T>
     {
@@ -20,6 +20,21 @@ namespace GEV.UMP.Utils
             get
             {
                 return this.FirstOrDefault(item => this.m_itemKeyPredicate(item) == o);
+            }
+
+            set
+            {
+                try
+                {
+                    T item = this[o];
+
+                    //Ha item nincs benne a listában exception-t dob!
+                    this.Remove(item);
+                }
+                finally
+                {
+                    this.Add(value);
+                }
             }
         }
     }

@@ -45,6 +45,16 @@
     <Compile Include="NodeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GEV.UMP.Configuration\GEV.UMP.Configuration.csproj">
+      <Project>{eb9361e8-83bc-4c39-abef-7a14fa41b627}</Project>
+      <Name>GEV.UMP.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEV.UMP.Core\GEV.UMP.Core.csproj">
+      <Project>{5b5116a2-d371-4345-980b-ca88750f1b13}</Project>
+      <Name>GEV.UMP.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

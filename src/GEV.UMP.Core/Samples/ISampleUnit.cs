@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GEV.UMP.Configuration.NodeMap
+namespace GEV.UMP.Core.Samples
 {
-    public enum NodeType
+    public interface ISampleUnit
     {
-        Control,
-        Compute
     }
 }

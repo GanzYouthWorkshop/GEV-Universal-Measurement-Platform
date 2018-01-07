@@ -8,9 +8,10 @@ namespace GEV.UMP.Core.Devices
 {
     public interface IDevice : IComponent
     {
-        string Address { get; set }
+        string Address { get; set; }
 
         bool Open();
         void Close();
+
     }
 }

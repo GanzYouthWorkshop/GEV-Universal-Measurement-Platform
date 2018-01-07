@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace GEV.UMP.Core.Samples
 {
-    public interface ISampleCollection
+    public class SampleInfo
     {
-        List<ISample> Samples { get; }
+        public int SampleSize { get; set; }
+        public int SamplingFrequency { get; set; }
     }
 }

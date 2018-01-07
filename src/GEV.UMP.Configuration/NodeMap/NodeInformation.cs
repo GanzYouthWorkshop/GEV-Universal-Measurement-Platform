@@ -8,8 +8,14 @@ namespace GEV.UMP.Configuration.NodeMap
 {
     public class NodeInformation
     {
+        public enum Types
+        {
+            Control,
+            Compute
+        }
+
         public string Address { get; set; }
-        public NodeType Type { get; set; }
+        public Types Type { get; set; }
         public string Name { get; set; }
     }
 }
