@@ -8,13 +8,16 @@ namespace GEV.UMP.Core.Data.Geometry
 {
     public class Point2DPolar
     {
-        public double Length { get; set; }
+        #region Mezők
+        public double Radius { get; set; }
         public double Angle { get; set; }
+        #endregion
 
-        public Point2DPolar(double Length, double Angle)
+        #region Konstruktorok
+        public Point2DPolar(double radius, double angle)
         {
-            this.Length = Length;
-            this.Angle = Angle;
+            this.Radius = radius;
+            this.Angle = angle;
         }
 
         public static implicit operator Point2DPolar(Point2D p)
@@ -24,6 +27,12 @@ namespace GEV.UMP.Core.Data.Geometry
 
             return new Point2DPolar(x, a);
 
+        }
+        #endregion
+
+        public double DistanceTo(Point2DPolar p)
+        {
+            return Math.Sqrt(this.Radius * this.Radius + p.Radius * p.Radius - 2 * this.Radius * p.Radius * Math.Cos(this.Angle - p.Angle));
         }
     }
 }

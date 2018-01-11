@@ -1,0 +1,6 @@
+[X] Dataman
+[X] Insight
+[ ] VisionPro
+[ ] HBM
+[ ] OPC
+[ ] 

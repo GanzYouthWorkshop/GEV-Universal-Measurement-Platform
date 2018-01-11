@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GEV.UMP.Configuration.NodeMap
 {
-    public class NodeMap : List<NodeInformation>
+    public class NodeMap : List<NodeDescriptor>
     {
     }
 }

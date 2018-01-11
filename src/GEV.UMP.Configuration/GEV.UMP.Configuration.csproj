@@ -41,8 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandLineParser.cs" />
-    <Compile Include="NodeMap\NodeInformation.cs" />
+    <Compile Include="NodeMap\NodeConfiguration.cs" />
+    <Compile Include="NodeMap\NodeConnection.cs" />
+    <Compile Include="NodeMap\NodeDescriptor.cs" />
     <Compile Include="NodeMap\NodeMap.cs" />
+    <Compile Include="NodeMap\SystemConfiguration.cs" />
     <Compile Include="Parameters\Correction.cs" />
     <Compile Include="Parameters\Parameter.cs" />
     <Compile Include="Parameters\Tolerance.cs" />

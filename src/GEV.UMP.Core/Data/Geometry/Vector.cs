@@ -8,6 +8,7 @@ namespace GEV.UMP.Core.Data.Geometry
 {
     public class Vector
     {
+        #region Mezők
         public double[] RawValues { get; }
 
         public double VectorLength
@@ -22,6 +23,7 @@ namespace GEV.UMP.Core.Data.Geometry
                 return Math.Sqrt(sum);
             }
         }
+        #endregion
 
         public Vector(int size)
         {

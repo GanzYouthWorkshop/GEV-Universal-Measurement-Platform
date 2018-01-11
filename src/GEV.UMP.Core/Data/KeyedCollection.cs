@@ -8,18 +8,18 @@ namespace GEV.UMP.Core.Data
 {
     public class KeyedCollection<T> : List<T>
     {
-        private Func<T, IComparable> m_itemKeyPredicate;
+        private Func<T, IComparable> m_ItemKeyPredicate;
 
         public KeyedCollection(Func<T, IComparable> itemKey)
         {
-            this.m_itemKeyPredicate = itemKey;
+            this.m_ItemKeyPredicate = itemKey;
         }
 
         public T this[object o]
         {
             get
             {
-                return this.FirstOrDefault(item => this.m_itemKeyPredicate(item) == o);
+                return this.FirstOrDefault(item => this.m_ItemKeyPredicate(item) == o);
             }
 
             set

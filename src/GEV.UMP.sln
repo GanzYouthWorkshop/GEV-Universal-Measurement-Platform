@@ -49,6 +49,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{403C826F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExecutable", "SimpleExecutable\SimpleExecutable.csproj", "{C3A9BB51-0BFE-4208-9EDC-34F3B3429CC1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D65645A-9E46-4339-9467-FB544BD2DCB2}"
+	ProjectSection(SolutionItems) = preProject
+		includes.txt = includes.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{DB8A1C72-8EB3-42CF-9916-40AF89385590}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,5 +144,6 @@ Global
 		{96B7630A-8A49-449D-911C-783665A3F027} = {B36C0A7A-924E-4A76-9471-8AF48C1C66D7}
 		{AD592EE8-91B1-4D2A-AD26-3243DD94C7A1} = {A699E4DE-96D5-43B0-B6AD-6F80CEA01EDC}
 		{C3A9BB51-0BFE-4208-9EDC-34F3B3429CC1} = {403C826F-3128-46BE-B673-86B671DF3F54}
+		{DB8A1C72-8EB3-42CF-9916-40AF89385590} = {CB990328-AF65-4751-8667-5F3586A9F8CE}
 	EndGlobalSection
 EndGlobal

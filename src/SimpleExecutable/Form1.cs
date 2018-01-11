@@ -1,4 +1,5 @@
-﻿using GEV.UMP.Nodes;
+﻿using GEV.UMP.Core.Data.Geometry;
+using GEV.UMP.Nodes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,11 @@ namespace SimpleExecutable
 
             ControlNode controlNode = new ControlNode(null);
             controlNode.StartComputeNodes();
+
+            Vector3 v1 = new Vector3(0, 0, 0);
+            Vector2 v2 = new Vector2(2, 2);
+
+            Vector3 v = v2 + v1;
         }
     }
 }

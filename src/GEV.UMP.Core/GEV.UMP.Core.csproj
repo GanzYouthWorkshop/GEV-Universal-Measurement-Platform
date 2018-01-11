@@ -56,19 +56,13 @@
     <Compile Include="Devices\IIODevice.cs" />
     <Compile Include="Devices\Variables\IIOVariable.cs" />
     <Compile Include="Devices\IOutputDevice.cs" />
-    <Compile Include="Devices\Variables\IOVariableBase.cs" />
+    <Compile Include="Devices\Variables\IOVariable.cs" />
     <Compile Include="IComponent.cs" />
     <Compile Include="Processors\IProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples\ISampleUnit.cs" />
     <Compile Include="Samples\ISample.cs" />
     <Compile Include="Samples\SampleInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GEV.UMP.Utils\GEV.UMP.Utils.csproj">
-      <Project>{069ec950-e431-4fec-af80-00ab93057e4d}</Project>
-      <Name>GEV.UMP.Utils</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

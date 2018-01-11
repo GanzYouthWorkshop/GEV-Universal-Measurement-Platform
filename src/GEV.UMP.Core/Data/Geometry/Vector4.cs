@@ -8,6 +8,7 @@ namespace GEV.UMP.Core.Data.Geometry
 {
     public class Vector4 : Vector
     {
+        #region Mezők
         public double X
         {
             get { return this.RawValues[0]; }
@@ -30,12 +31,16 @@ namespace GEV.UMP.Core.Data.Geometry
         {
             get { return this.RawValues[3]; }
             set { this.RawValues[3] = value; }
-
         }
+        #endregion
 
+        #region Konstruktorok
         public Vector4() : base(4)
         {
-
+            this.X = 0;
+            this.Y = 0;
+            this.Z = 0;
+            this.T = 0;
         }
 
         public Vector4(double X, double Y, double Z) : base(4)
@@ -45,6 +50,6 @@ namespace GEV.UMP.Core.Data.Geometry
             this.Z = Z;
             this.T = T;
         }
-
+        #endregion
     }
 }
